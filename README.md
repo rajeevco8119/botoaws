@@ -1,0 +1,2 @@
+# botoaws
+As we move towards cloud platforms, it is imperative to Automate the cloud stuff using scripts, which in turn can be automated in CI/CD pipelines. As AWS still emerges as the leader in cloud domain, python3 has a very great inbuilt support library boto3 which can Automate the stuff, So let's begin  Once we register on AWS, we need to have certain basic parameters like aws_access_key_id and aws_secret_access_key and region_name . These 3 things can do most of the tasks

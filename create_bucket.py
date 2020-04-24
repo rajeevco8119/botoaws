@@ -18,12 +18,12 @@ import boto3
 def create_bucket(bucket_name,region=REGION_NAME):
     try:
         if region is None:
-            s3_client = boto3.resource('s3',aws_access_key_id='AKIA4M5FRLANPLU3JFA5',
-                        aws_secret_access_key='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')
+            s3_client = boto3.resource('s3',aws_access_key_id='ACCESS_KEY',
+                        aws_secret_access_key='SECRET_KEY')
             s3_client.create_bucket(Bucket=bucket_name)
         else:
-            s3_client = boto3.resource('s3',aws_access_key_id='AKIA4M5FRLANPLU3JFA5',
-                        aws_secret_access_key='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')
+            s3_client = boto3.resource('s3',aws_access_key_id='ACCESS_KEY',
+                        aws_secret_access_key='SECRET_KEY')
             location = {'LocationConstraint':region}
             s3_client.create_bucket(Bucket=bucket_name,CreateBucketConfiguration=location)
     except ClientError as e:

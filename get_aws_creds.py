@@ -1,3 +1,4 @@
+# This script will only work if your aws credentials are already setup
 from boto3 import Session
 session = Session()
 credentials = session.get_credentials()

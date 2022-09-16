@@ -18,7 +18,15 @@ def describe_cluster(clusterName):
     response = client.describe_cluster(
         name=clusterName
     )
+    print(response)
     return response['cluster']['arn']
+
+
+def list_nodegroup(clusterName):
+    response = client.list_nodegroups(
+        clusterName=clusterName
+    )
+    return response['nodegroups'][0]
 
 
 def get_flag():
@@ -32,7 +40,7 @@ def get_flag():
 def update_cluster():
     response = client.update_nodegroup_config(
         clusterName=clusterName,
-        nodegroupName='oss-stage-ng',
+        nodegroupName=list_nodegroup(clusterName),
         scalingConfig={
             'minSize': min_node_count,
             'maxSize': max_node_count,
